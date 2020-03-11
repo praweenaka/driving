@@ -21,7 +21,7 @@
                         data-fontsize="['50', '50', '50', '50']"
                         data-lineheight="['60', '60', '60', '60']"
                         data-height="['auto']"
-                        >Welcome To Our Learners</h2>
+                        >Welcome To Our Learners..</h2>
 
                     <p class="tp-caption tp-resizeme txt2 txt-center p-l-15 p-r-15" 
                        data-frames='[{"delay":1500,"speed":1500,"frame":"0","from":"x:right;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
