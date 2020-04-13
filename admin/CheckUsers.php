@@ -19,7 +19,7 @@ if ($Command == "CheckUsers") {
     $Password = $_GET["Password"];
 //    $ResponseXML .= "<action><![CDATA[" . $_GET['action'] . "]]></action>";
 //    $ResponseXML .= "<form><![CDATA[" . $_GET['form'] . "]]></form>";
-    $sql = "SELECT * FROM user_mast WHERE user_name =  '" . $UserName . "' and password =  '" . $Password . "' ";
+    $sql = "SELECT * FROM user_mast WHERE user_name =  '" . $UserName . "' and password =  '" . $Password . "' "; 
     $result = $conn->query($sql);
 
     if ($row = $result->fetch()) {
@@ -75,7 +75,7 @@ if ($_GET["Command"] == "save_inv") {
     if ($row1 = $result->fetch()) {
         echo "User Found !!!";
     } else {
-        $sql = "insert into user_mast(user_name,user_depart, password) values ('" . $_GET["user_name"] . "', '" . $_GET["user_depart"] . "', '" . $_GET["password"] . "')";
+        $sql = "insert into user_mast(user_name,user_depart, password) values ('" . $_GET["user_name"] . "', '" . $_GET["user_type"] . "', '" . $_GET["password"] . "')";
         
         $result = $conn->query($sql);
         echo "Saved";
@@ -84,8 +84,7 @@ if ($_GET["Command"] == "save_inv") {
 
 if ($Command == "logout") {
 
-
-
+// header("Cache-Control: no-cache, must-revalidate");
 
 
     $today = date('Y-m-d');
@@ -93,7 +92,7 @@ if ($Command == "logout") {
     setcookie('user', "", 1, "/", $domain);
 
 
-
+clearstatcache();
     session_unset();
     session_destroy();
 }
